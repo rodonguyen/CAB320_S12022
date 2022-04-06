@@ -298,11 +298,33 @@ class Node:
         # with the same state in a Hash Table        
         return hash(self.state)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #______________________________________________________________________________
 
 # bookmark
-# Uninformed Search algorithms
-
 def tree_search(problem, frontier):
     """
         Search through the successors of a problem to find a goal.
@@ -454,12 +476,10 @@ def depth_limited_search(problem, limit=50):
             cutoff_occurred = False
             for child in node.expand(problem):
                 result = recursive_dls(child, problem, limit)
-                raise NotImplementedError # "INSERT YOUR CODE HERE"
-
-                #
-                #        “INSERT YOUR CODE HERE”
-                #
-                                
+                if result == 'cutoff':
+                    cutoff_occurred = True
+                elif result is not None:
+                    return result
             if cutoff_occurred:
                 return 'cutoff'
             else:

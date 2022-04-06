@@ -150,15 +150,33 @@ class Sliding_puzzle(W04_search.Problem):
 
 if __name__ == "__main__":
 
-    sp = Sliding_puzzle(nr=5, nc=5, N=50)
+    sp = Sliding_puzzle(nr=5, nc=5, N=10)
 
     t0 = time.time()
 
-    sol_ts = W04_search.breadth_first_tree_search(sp)
-    
-#    sol_ts = W04_search.depth_first_tree_search(sp)
-#    sol_ts = W04_search.iterative_deepening_search(ssp)
+    # sol_ts = W04_search.breadth_first_tree_search(sp)
+    # print('---')
 
+    ### Depth does not work due to falling in a cycle
+    # sol_ts = W04_search.depth_first_tree_search(sp)
+    # print('x---')
+    # sol_ts = W04_search.depth_first_graph_search(sp)
+    # print('x---')
+
+    # sol_ts = W04_search.breadth_first_graph_search(sp)
+    # print('---')
+
+    # sol_ts = W04_search.uniform_cost_search(sp)
+    # print('---')
+
+    # sol_ts = W04_search.iterative_deepening_search(sp)
+    # print('---')
+
+    sol_ts = W04_search.depth_limited_search(sp,30)
+    # print('---')
+
+    # sol_ts = W04_search.tree_search(sp)
+    # sol_ts = W04_search.graph_search(sp)
 
     t1 = time.time()
     sp.print_solution(sol_ts)
