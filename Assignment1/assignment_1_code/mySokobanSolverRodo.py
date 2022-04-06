@@ -1,3 +1,4 @@
+
 '''
 
     Sokoban assignment
@@ -31,8 +32,6 @@ Last modified by 2022-03-27  by f.maire@qut.edu.au
 import search 
 import sokoban
 
-X_INDEX = 0
-Y_INDEX = 1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -43,143 +42,10 @@ def my_team():
     of triplet of the form (student_number, first_name, last_name)
     
     '''
-    return [(10210776, 'Mitchell', 'Egan'), (10396489, 'Jaydon', 'Gunzburg'), (10603280, 'Dac Duy Anh', 'Nguyen')]
+    return [ (10603280, 'Dac Duy Anh', 'Nguyen'), (1234568, 'a', 'a'), (1234569, 'a', 'a') ]
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-def get_inside_cells(warehouse, inside_cells = [], cell = None):
-    '''
-    Recursively identify inside cells (the cells that are enclosed by walls in 
-    the space of the worker) using the flood fill algorithm. Adapted from:
-    https://en.wikipedia.org/wiki/Flood_fill#Stack-based_recursive_implementation_(four-way)
-
-    Parameters
-    ----------
-    warehouse : Warehouse
-        A Warehouse object with the worker inside the warehouse.
-    inside_cells : List, optional
-        The list of already identified inside cells (coordinate tuples). The default is [].
-    cell : Tuple, optional
-        The cell to check. The default is None.
-
-    Returns
-    -------
-    inside_cells : List
-        The list of identified inside cells.
-    '''
-    
-    if (cell is None):
-        cell = warehouse.worker
-    
-    if (cell in inside_cells or cell in warehouse.walls):
-        return inside_cells
-    
-    inside_cells.append(cell)
-    
-    # Recursively call get_inside_cells on cells to the north, south, west and east of current position
-    inside_cells = get_inside_cells(warehouse, inside_cells, (cell[X_INDEX], cell[Y_INDEX] + 1))
-    inside_cells = get_inside_cells(warehouse, inside_cells, (cell[X_INDEX], cell[Y_INDEX] - 1))
-    inside_cells = get_inside_cells(warehouse, inside_cells, (cell[X_INDEX] - 1, cell[Y_INDEX]))
-    inside_cells = get_inside_cells(warehouse, inside_cells, (cell[X_INDEX] + 1, cell[Y_INDEX]))
-
-    return inside_cells
-
-def is_corner(warehouse, cell):
-    '''
-    Parameters
-    ----------
-    warehouse : TYPE
-        DESCRIPTION.
-    cell : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    TYPE
-        DESCRIPTION.
-
-    '''
-    wall_neighbour_x = (cell[X_INDEX] - 1, cell[Y_INDEX]) in warehouse.walls or (cell[X_INDEX] + 1, cell[Y_INDEX]) in warehouse.walls
-    wall_neighbour_y = (cell[X_INDEX], cell[Y_INDEX] - 1) in warehouse.walls or (cell[X_INDEX], cell[Y_INDEX] + 1) in warehouse.walls
-    
-    return wall_neighbour_x and wall_neighbour_y
-
-def get_inside_corner_cells(warehouse, inside_cells):
-    '''
-    First finds all corner cells, then removes one that are not inside the warehouse
-    (known from get_inside_cells())
-
-    Parameters
-    ----------
-    warehouse : Warehouse
-        A Warehouse object with the worker inside the warehouse.
-
-    Returns
-    -------
-    corner_cells : List
-        The list of identified corner cells.
-    '''
-    inside_corner_cells = []
-    
-    for inside_cell in inside_cells:
-        if is_corner(warehouse, inside_cell):
-            inside_corner_cells.append(inside_cell)
-                
-    return inside_corner_cells
-
-def get_corner_pairs(warehouse, corners):
-    '''
-    returns a list of pairs of corners that are opposite each other,
-    and the axis direction the pair is on ('x' or 'y')
-
-    Parameters
-    ----------
-    warehouse : Warehouse
-        A Warehouse object with the worker inside the warehouse.
-
-    Returns
-    -------
-    corners : 3-tuple List
-        List of identified corner pairs
-    '''
-
-    corner_pairs = []
-
-
-    # Rodo -----------------------------------
-    for one in range(len(corners)-1):
-        for two in range(one+1, len(corners)):
-            corner_1 = corners[one]
-            corner_2 = corners[two]
-
-            # Finding corner pair along Y axis
-            wall_on_path = False
-            # If they are on the same X
-            if corner_1[X_INDEX] == corner_2[X_INDEX]:
-                direction = -1 if corner_1[Y_INDEX] > corner_2[Y_INDEX] else 1
-
-                # Check if there is wall on the path from corner_1 to corner_2
-                for i in range(corner_1[Y_INDEX], corner_2[Y_INDEX]+1, direction):
-                    if (corner_1[X_INDEX], i) in warehouse.walls:
-                        wall_on_path = True
-                        break
-                if not wall_on_path:
-                    corner_pairs.append((corner_1, corner_2, 'y'))
-
-            # Finding corner pair along X axis
-            wall_on_path = False
-            # If they are on the same Y
-            if corner_1[Y_INDEX] == corner_2[Y_INDEX]:
-                direction = -1 if corner_1[X_INDEX] > corner_2[X_INDEX] else 1
-
-                # Check if there is wall on the path from corner_1 to corner_2
-                for i in range(corner_1[X_INDEX], corner_2[X_INDEX]+1, direction):
-                    if (i, corner_1[Y_INDEX]) in warehouse.walls:
-                        wall_on_path = True
-                        break
-                if not wall_on_path:
-                    corner_pairs.append((corner_1, corner_2, 'x'))
-    return corner_pairs
 
 
 def taboo_cells(warehouse):
@@ -207,11 +73,8 @@ def taboo_cells(warehouse):
        The returned string should NOT have marks for the worker, the targets,
        and the boxes.  
     '''
-    
-    inside_cells = get_inside_cells(warehouse)
-    inside_corner_cells = get_inside_corner_cells(warehouse, inside_cells)
-    
-    return inside_corner_cells
+    ##         "INSERT YOUR CODE HERE"
+    raise NotImplementedError()
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

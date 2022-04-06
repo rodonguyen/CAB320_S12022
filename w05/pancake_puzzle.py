@@ -14,9 +14,9 @@ by f.maire@qut.edu.au
 
 """
 
-from  W05_search import Problem, breadth_first_graph_search, astar_graph_search
+from  W05_search import Problem, breadth_first_graph_search, astar_graph_search, astar_tree_search
 
-import time
+import random, time
 
 class PancakePuzzle(Problem):
     '''
@@ -27,14 +27,25 @@ class PancakePuzzle(Problem):
     '''
     default_size = 4
     def __init__(self, initial=None, goal=None):
+        # Problem.__init__(self, initial, goal)
+        if goal is None:
+            self.goal = range(PancakePuzzle.default_size,-1,-1)
+        else:
+            self.goal = goal
+        if initial:
+            self.initial = initial
+        else:
+            self.initial = range(len(self.goal))
+            random.shuffle(self.initial)
+        assert set(self.initial)==set(self.goal)
+        self.initial = tuple(self.initial)
+        self.goal = tuple(self.goal)
 
-        raise NotImplementedError # "INSERT YOUR CODE HERE"
-        
     def actions(self, state):
         """Return the actions that can be executed in the given
         state.
         """
-        raise NotImplementedError # "INSERT YOUR CODE HERE"
+        return list(range(len(state)))
 
     def result(self, state, action):
         """Return the state that results from executing the given
@@ -43,8 +54,8 @@ class PancakePuzzle(Problem):
         Applying action a to state s results in a sequence
         s[:a]+s[-1:a-1:-1]
         """
-
-        raise NotImplementedError # "INSERT YOUR CODE HERE"
+        assert action in self.actions(state)
+        return tuple( list(state[:action])+list(reversed(state[action:])) )
 
     def print_solution(self, goal_node):
         """
@@ -79,6 +90,20 @@ class PancakePuzzle(Problem):
         state2.  If the path does matter, it will consider c and maybe state1
         and action. The default method costs 1 for every step in the path."""
         return c + 1
+
+    def h(self, n):
+        '''
+        Heuristic for goal state of the form range(k,-1,1) where k is a positive integer. 
+        h(n) = 1 + the index of the largest pancake that is still out of place
+        '''
+        k = len(n.state)
+        assert k == len(self.goal)
+        misplaced = [x for i,x in enumerate(n.state) if x!=k-1-i]
+        if misplaced:
+            # some elements misplaced
+            return 1+max(misplaced)
+        else:
+            return 0
 
 
 #______________________________________________________________________________

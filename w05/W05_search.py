@@ -471,8 +471,8 @@ def astar_graph_search(problem, h=None):
     """A* search is best-first graph search with f(n) = g(n)+h(n).
     You need to specify the h function when you call astar_search, or
     else in your Problem subclass."""
-    
-    raise NotImplementedError # "INSERT YOUR CODE HERE"
+    h = memoize(h or problem.h, slot='h')
+    return best_first_graph_search(problem, lambda n: n.path_cost + h(n))
 
 
 def astar_tree_search(problem, h=None):

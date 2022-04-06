@@ -50,9 +50,9 @@ def find_2D_iterator(lines, char):
     for y, line in enumerate(lines):
         for x in find_1D_iterator(line, char):
             yield (x,y)
-
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 class Warehouse:
     '''
     A Warehouse instance represents the initial configuration of a warehouse
