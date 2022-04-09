@@ -72,4 +72,3 @@ print('Testing on:', w)
 print('Corners:', inside_corner_cells)
 print('Corner pairs:', corner_pairs)
 print('Corner pairs:', corner_pairs_old,  '(old version)')
-
