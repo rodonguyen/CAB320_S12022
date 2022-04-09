@@ -145,8 +145,6 @@ def get_corner_pairs(warehouse, corners):
 
     corner_pairs = []
 
-
-    # Rodo -----------------------------------
     for one in range(len(corners)-1):
         for two in range(one+1, len(corners)):
             corner_1 = corners[one]
