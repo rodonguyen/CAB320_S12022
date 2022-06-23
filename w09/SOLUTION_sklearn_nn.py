@@ -50,7 +50,7 @@ X, y = mnist["data"], mnist["target"]
 print('Shape of X and y ',X.shape, y.shape)
 
 if False: # change to True to execute the code
-#if True: # change to True to execute the code
+# if True: # change to True to execute the code
     some_digit = X[99]
     some_digit_image = some_digit.reshape(28, 28)
     plt.imshow(some_digit_image, cmap = mpl.cm.binary, interpolation="nearest")

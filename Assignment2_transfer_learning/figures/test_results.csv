@@ -1,0 +1,79 @@
+trainedModel_runNumber102_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.86, Single Dense Layer (5 outputs)
+trainedModel_runNumber102_0.01_0.0_unfreezeAllLayers_highestAccraccy.h5,0.86,
+trainedModel_runNumber102_0.01_0.0_freezeSomeLayers_highestAccuraccy.h5,0.84,
+,,
+figures/model_runNumber09_0.1_0.0_unfreezeAllLayers_lowestLoss.h5,0.226666667,
+figures/model_runNumber09_0.1_0.0_unfreezeAllLayers_highestAccuracy.h5,0.246666667,
+figures/model_runNumber09_0.1_0.0_freezeSomeLayers_highestAccuracy.h5,0.86,
+,,
+figures/model_runNumber09_0.001_0.0_unfreezeAllLayers_lowestLoss.h5,0.846666667,
+figures/model_runNumber09_0.001_0.0_unfreezeAllLayers_highestAccuracy.h5,0.84,
+figures/model_runNumber09_0.001_0.0_freezeSomeLayers_highestAccuracy.h5,0.813333333,
+,,
+figures/model_runNumber09_0.0001_0.0_unfreezeAllLayers_lowestLoss.h5,0.8,
+figures/model_runNumber09_0.0001_0.0_unfreezeAllLayers_highestAccuracy.h5,0.786666667,
+figures/model_runNumber09_0.0001_0.0_freezeSomeLayers_highestAccuracy.h5,0.773333333,
+,,
+figures/model_runNumber101_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.8667, 1 Dense Layer - 0..1 range - batchsize 50  
+figures/model_runNumber101_0.01_0.0_unfreezeAllLayers_highestAccuracy.h5,0.86,
+figures/model_runNumber101_0.01_0.0_freezeSomeLayers_highestAccuracy.h5,0.84,
+,,
+,,
+Experimenting model designs,,
+figures/model_runNumber102_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.913333333, 2 Dense Layer (2^6-5) - BEST ONE
+figures/model_runNumber102_0.01_0.0_unfreezeAllLayers_highestAccuracy.h5,0.913333333,
+figures/model_runNumber102_0.01_0.0_freezeSomeLayers_highestAccuracy.h5,0.82,
+,,
+figures/model_runNumber104_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.886666667, 3Dense 
+figures/model_runNumber104_0.01_0.0_unfreezeAllLayers_highestAccuracy.h5,0.86,
+figures/model_runNumber104_0.01_0.0_freezeSomeLayers_highestAccuracy.h5,0.84,
+,,
+figures/model_runNumber105_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.846666667, Dense+Dropout+Dense
+figures/model_runNumber105_0.01_0.0_unfreezeAllLayers_highestAccuracy.h5,0.846666667,
+figures/model_runNumber105_0.01_0.0_freezeSomeLayers_highestAccuracy.h5,0.84,
+,,
+figures/model_runNumber106_0.01_0.0_unfreezeAllLayers_lowestLoss.h5,0.806666667, BatchNorm+Dense+Dropout+Dense
+figures/model_runNumber106_0.01_0.0_unfreezeAllLayers_highestAccuracy.h5,0.82,
+figures/model_runNumber106_0.01_0.0_freezeSomeLayers_highestAccuracy.h5,0.813333333,
+,,
+,,
+Learning rates,,
+figures/model_runNumber102_0.1_0.0_unfreezeAllLayers_lowestLoss.h5,0.306666667,
+figures/model_runNumber102_0.1_0.0_unfreezeAllLayers_highestAccuracy.h5,0.306666667,
+figures/model_runNumber102_0.1_0.0_freezeSomeLayers_highestAccuracy.h5,0.533333333,
+,,
+figures/model_runNumber102_0.001_0.0_unfreezeAllLayers_lowestLoss.h5,0.846666667,
+figures/model_runNumber102_0.001_0.0_unfreezeAllLayers_highestAccuracy.h5,0.846666667,
+figures/model_runNumber102_0.001_0.0_freezeSomeLayers_highestAccuracy.h5,0.813333333,
+,,
+figures/model_runNumber102_0.0001_0.0_unfreezeAllLayers_lowestLoss.h5,0.846666667,
+figures/model_runNumber102_0.0001_0.0_unfreezeAllLayers_highestAccuracy.h5,0.846666667,
+figures/model_runNumber102_0.0001_0.0_freezeSomeLayers_highestAccuracy.h5,0.746666667,
+,,
+,,
+Momentums,,
+,,
+figures/model_runNumber102_0.01_0.01_unfreezeAllLayers_lowestLoss.h5,0.88,
+figures/model_runNumber102_0.01_0.01_unfreezeAllLayers_highestAccuracy.h5,0.873333333,
+figures/model_runNumber102_0.01_0.01_freezeSomeLayers_highestAccuracy.h5,0.813333333,
+,,
+figures/model_runNumber102_0.01_0.7_unfreezeAllLayers_lowestLoss.h5,0.893333333,
+figures/model_runNumber102_0.01_0.7_unfreezeAllLayers_highestAccuracy.h5,0.893333333,
+figures/model_runNumber102_0.01_0.7_freezeSomeLayers_highestAccuracy.h5,0.826666667,
+,,
+figures/model_runNumber102_0.01_1_unfreezeAllLayers_lowestLoss.h5,0.433333333,
+figures/model_runNumber102_0.01_1_unfreezeAllLayers_highestAccuracy.h5,0.433333333,
+figures/model_runNumber102_0.01_1_freezeSomeLayers_highestAccuracy.h5,0.613333333,
+
+figures/model_runNumber0_0.01_0.05_unfreezeAllLayers_lowestLoss.h5, 0.4866666666666667
+figures/model_runNumber0_0.01_0.05_unfreezeAllLayers_highestAccuracy.h5, 0.4866666666666667
+figures/model_runNumber0_0.01_0.05_freezeSomeLayers_highestAccuracy.h5, 0.3333333333333333
+
+figures/model_runNumber102_momentum_0.01_0.05_unfreezeAllLayers_lowestLoss.h5, 0.6866666666666666
+figures/model_runNumber102_momentum_0.01_0.05_unfreezeAllLayers_highestAccuracy.h5, 0.6866666666666666
+figures/model_runNumber102_momentum_0.01_0.05_freezeSomeLayers_highestAccuracy.h5, 0.64
+
+
+
+
+
